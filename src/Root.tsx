@@ -1,12 +1,25 @@
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
+import { CodeGuide, codeGuideSchema, TOTAL_DURATION } from "./CodeGuide";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* CodeGuide Launch Animation - Main composition */}
+      <Composition
+        id="CodeGuide"
+        component={CodeGuide}
+        durationInFrames={TOTAL_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={codeGuideSchema}
+        defaultProps={{}}
+      />
+
       <Composition
         // You can take the "id" to render a video:
         // npx remotion render HelloWorld
